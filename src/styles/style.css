@@ -1,3 +1,5 @@
+
+
 /*
   Theme Name: Bentofolio - Bootstrap Personal Portfolio Template
   Support: marveltheme@gmail.com
@@ -687,7 +689,7 @@ p {
 }
 
 .expertise-card {
-	height: 299px;
+	min-height: 299px;
 }
 
 .expertise-card .expertise-item {
@@ -701,8 +703,8 @@ p {
 }
 
 .expertise-card .expertise-item .image img {
-	width: 32px;
-	height: 32px;
+	width: 40px;
+	height: 40px;
 }
 
 .expertise-card .expertise-item .text .title {

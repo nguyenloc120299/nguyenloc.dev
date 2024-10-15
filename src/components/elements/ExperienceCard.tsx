@@ -17,13 +17,13 @@ const ExperienceCard = () => {
         {
             date: "12/2021 - 09/2023",
             logo_company: hopper,
-            title: "PLAYGROUND",
+            title: "HOPPER VN",
             description: "Frontend Developer "
         },
         {
             date: "09/2023 - 11/2024",
             logo_company: playground,
-            title: " HOPPER VN",
+            title: "PLAYGROUND",
             description: "Frontend Developer "
         }
     ]
