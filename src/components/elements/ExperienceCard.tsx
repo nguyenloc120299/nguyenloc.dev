@@ -35,7 +35,7 @@ const ExperienceCard = () => {
                     <ul className="work-experiance-slider list-unstyled">
                         {
                             experienceData.map((i, index) => (
-                                <li>
+                                <li key={index}>
                                     <div className="date">
                                         <p>{i.date}</p>
                                     </div>

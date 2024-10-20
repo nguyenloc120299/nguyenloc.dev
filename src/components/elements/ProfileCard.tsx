@@ -7,12 +7,17 @@ import { useCopyToClipboard } from "@uidotdev/usehooks";
 const ProfileCard = () => {
   const [copiedText, copyToClipboard] = useCopyToClipboard();
 
-
   return (
     <div className="card profile-card">
       <div className="card-body">
         <div className="image text-center">
-          <Image src={profile_image} alt="profile" width={400} height={400}  />
+          <Image src={profile_image} alt="profile"
+            sizes="400px"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
         </div>
         <div className="text">
           <h3 className="card-title">Nguyen Thanh Loc 👋</h3>

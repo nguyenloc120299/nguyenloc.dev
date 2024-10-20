@@ -1,13 +1,34 @@
-import ProfileCard from "@/components/elements/ProfileCard";
-import React from "react";
 
-const Index = () => {
+
+import { getSortedPostsData, parseMarkdownToHtml } from "@/blogs";
+import ProfileCard from "@/components/elements/ProfileCard";
+import React, { useEffect, useState } from "react";
+
+async function fetchData() {
+  const postsData = await getSortedPostsData();
+
+  // Convert markdown to HTML for each post
+  const postsWithHtml = await Promise.all(
+    postsData.map(async (post) => {
+
+      return {
+        ...post,
+      };
+    })
+  );
+
+  return postsWithHtml
+}
+
+const Index = async () => {
+  const blogs = await fetchData()
+
   return (
     <section className="content-box-area mt-4">
       <div className="container">
         <div className="row g-4">
           <div className="col-xl-4">
-            <ProfileCard/>
+            <ProfileCard />
           </div>
           <div className="col-xl-8">
             <div className="card content-box-card">
@@ -27,162 +48,35 @@ const Index = () => {
                 <div className="article-publications article-area">
                   <div className="article-publications-main">
                     <div className="row">
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-1.jpg"
-                                alt="blog-img-1"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
+                      {
+                        blogs.map((post: any, index: number) => (
+                          <div className="col-xl-6 col-lg-4 col-md-6" key={index}>
+                            <div className="article-publications-item">
+                              <div className="image">
+                                <a href="article.html" className="d-block w-100">
+                                  <img
+                                    src="assets/img/blog/blog-img-1.jpg"
+                                    alt="blog-img-1"
+                                    className="img-fluid w-100"
+                                  />
+                                </a>
+                                <a href="article.html" className="tags">
+                                  <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                                </a>
+                              </div>
+                              <div className="text">
+                                <a href="article.html" className="title">
+                                  {post.data.title}
+                                </a>
+                                <ul className="list-unstyled">
+                                  <li>15 min read</li>
+                                  <li>{post.data.date}</li>
+                                </ul>
+                              </div>
+                            </div>
                           </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-2.jpg"
-                                alt="blog-img-2"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
-                          </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-3.jpg"
-                                alt="blog-img-3"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
-                          </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-4.jpg"
-                                alt="blog-img-4"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
-                          </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-5.jpg"
-                                alt="blog-img-5"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
-                          </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-xl-6 col-lg-4 col-md-6">
-                        <div className="article-publications-item">
-                          <div className="image">
-                            <a href="article.html" className="d-block w-100">
-                              <img
-                                src="assets/img/blog/blog-img-6.jpg"
-                                alt="blog-img-6"
-                                className="img-fluid w-100"
-                              />
-                            </a>
-                            <a href="article.html" className="tags">
-                              Development
-                            </a>
-                          </div>
-                          <div className="text">
-                            <a href="article.html" className="title">
-                              Want To Upgrade Your Brain? Stop Doing These 7
-                              Things
-                            </a>
-                            <ul className="list-unstyled">
-                              <li>15 min read</li>
-                              <li>Nov 6, 2023</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
+                        ))
+                      }
                     </div>
                   </div>
                 </div>
