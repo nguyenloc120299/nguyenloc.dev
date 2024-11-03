@@ -9,9 +9,9 @@ import MainLayout from "@/components/layouts/MainLayout";
 import "@/styles/bootstrap.min.css"
 import "@/styles/magnific-popup.css"
 import "@/styles/magnific-popup.css"
-import "@/styles/responsive.css"
 import "@/styles/slick.css"
 import "@/styles/style.css"
+import "@/styles/responsive.css"
 
 import "@/styles/fontawsome/css/all.min.css"
 import "@/styles/fontawsome/css/fontawesome.min.css"

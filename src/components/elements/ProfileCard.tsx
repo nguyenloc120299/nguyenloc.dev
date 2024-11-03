@@ -27,7 +27,7 @@ const ProfileCard = () => {
             Experiences over 24+ Country Worldwide.
           </p>
           <div className="common-button-groups">
-            <a className="btn btn-call" href="index.html#">
+            <a className="btn btn-call" href="tel:0378028840">
               <svg
                 className="icon"
                 width={25}
@@ -92,7 +92,7 @@ const ProfileCard = () => {
           <div className="social-media-icon">
             <ul className="list-unstyled">
               <li>
-                <a href="index.html#">
+                <a href="https://www.facebook.com/loc120299/" target="_blank">
                   <i className="fab fa-facebook" />
                 </a>
               </li>
@@ -102,17 +102,17 @@ const ProfileCard = () => {
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="https://github.com/nguyenloc120299" target="_blank">
                   <i className="fab fa-github" />
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="https://x.com/LcNguyn76947691" target="_blank">
                   <i className="fab fa-twitter" />
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="mailto:nguyenloc12021999vn@gmail.com">
                   <i className="fab fa-google" />
                 </a>
               </li>
