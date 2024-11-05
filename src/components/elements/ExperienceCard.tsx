@@ -12,19 +12,19 @@ const ExperienceCard = () => {
             date: "8/2021 - 10/2021",
             logo_company: tikatika,
             title: "TIKATIKA",
-            description: "Frontend Developer"
-        },
-        {
-            date: "12/2021 - 09/2023",
-            logo_company: hopper,
-            title: "HOPPER VN",
-            description: "Frontend Developer "
+            description: "Web Developer"
         },
         {
             date: "09/2023 - 11/2024",
+            logo_company: hopper,
+            title: "HOPPER VN",
+            description: "Web Developer "
+        },
+        {
+            date: "12/2021 - 09/2023",
             logo_company: playground,
             title: "PLAYGROUND",
-            description: "Frontend Developer "
+            description: "Web Developer "
         }
     ]
     return (

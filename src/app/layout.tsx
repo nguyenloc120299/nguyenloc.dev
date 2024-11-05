@@ -15,6 +15,7 @@ import "@/styles/responsive.css"
 
 import "@/styles/fontawsome/css/all.min.css"
 import "@/styles/fontawsome/css/fontawesome.min.css"
+import '@/styles/work-experience.css'
 
 // -----------------------------------------------------
 

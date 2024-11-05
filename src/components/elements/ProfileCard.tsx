@@ -22,9 +22,13 @@ const ProfileCard = () => {
         <div className="text">
           <h3 className="card-title">Nguyen Thanh Loc 👋</h3>
           <p>
-            A Passionate <span>Full Stack Developer</span> 🖥️ &amp;{" "}
-            <span>Product Designer</span> having <span>3 years</span> of
-            Experiences over 24+ Country Worldwide.
+            I am a <span>
+              Web App Developer
+            </span>  with over
+            <span>
+              3 years of experience </span>
+            in building and developing web app products.
+
           </p>
           <div className="common-button-groups">
             <a className="btn btn-call" href="tel:0378028840">

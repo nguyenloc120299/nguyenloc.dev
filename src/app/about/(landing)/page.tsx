@@ -1,6 +1,7 @@
 'use client'
 
 import ProfileCard from "@/components/elements/ProfileCard";
+import WorkExperienceTimeline from "@/components/elements/WorkExperienceTimeline";
 import { SkillData } from "@/constant/mockup";
 import { useStore } from "@/store/useStore";
 import Image from "next/image";
@@ -9,7 +10,7 @@ import React from "react";
 
 const Index = () => {
 
-  const {isDarkMode} = useStore()
+  const { isDarkMode } = useStore()
 
   return (
     <section className="content-box-area mt-4">
@@ -27,9 +28,12 @@ const Index = () => {
                       Hi, This Is <span>Nguyen Thanh Loc</span> 👋
                     </h1>
                     <p>
-                      A Passionate <b>Full Stack Developer</b> 🖥️ &amp;{" "}
-                      <b>Product Designer</b> having
-                      <b>3 years</b> of Experiences over 24+ Country Worldwide.{" "}
+                      I am a <span>
+                        Web App Developer
+                      </span>  with over
+                      <span>
+                        3 years of experience </span>
+                      in building and developing web app products.
                     </p>
                   </div>
                   <div className="available-btn">
@@ -55,6 +59,10 @@ const Index = () => {
                   </div>
                 </div>
                 <div className="working-with-area">
+                  <h2 className="main-common-title">Work Experience ✨</h2>
+                  <WorkExperienceTimeline />
+                </div>
+                <div className="working-with-area">
                   <h2 className="main-common-title">Mastering Key Skills ✨</h2>
                   <div className="working-with-main">
                     {SkillData.map((i, index) => (
@@ -64,7 +72,7 @@ const Index = () => {
                             width: "60px",
                             height: "60px",
                             borderRadius: "50%",
-                            background: isDarkMode ?"#fff" : 'transparent',
+                            background: isDarkMode ? "#fff" : 'transparent',
                             display: "flex",
                             justifyContent: "center",
                             alignItems: "center",

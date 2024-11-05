@@ -6,10 +6,11 @@ import Image from "next/image";
 import { SkillData } from "@/constant/mockup";
 import Link from "next/link";
 import { useStore } from "@/store/useStore";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const SkillCard = () => {
-  const cardData = SkillData.slice(0, 9);
-  const {isDarkMode} = useStore()
+  const breakpoint = useBreakpoint()
+  const cardData = breakpoint === 'mobile' ? SkillData.slice(0, 9) : SkillData.slice(0, 15);
   return (
     <div className="card expertise-card">
       <div className="card-body">
@@ -17,17 +18,17 @@ const SkillCard = () => {
         <div className="expertise-main mt-24">
           <div className="row g-3">
             {cardData.map((i, index) => (
-              <div className="col-xl-4 col-md-4 col-sm-6 col-6" key={index}>
+              <div className="col-xl-4 col-md-4 col-sm-4 col-4" key={index}>
                 <div className="expertise-item">
                   <div className="image text-center" style={{
-                    width:"60px",
-                    height:"60px",
-                    borderRadius:"50%",
-                    background:"#fff",
-                    display:'flex',
-                    justifyContent:'center',
-                    alignItems:"center",
-                    margin:'auto'
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "50%",
+                    background: "#fff",
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: "center",
+                    margin: 'auto'
                   }}>
                     <Image src={i.img} alt={i.title} width={48} height={48} />
                   </div>
