@@ -7,19 +7,22 @@ import { useStore } from '@/store/useStore'
 import MainFooter from './MainFooter'
 
 interface Props {
-    children: React.ReactNode
+    children: React.ReactNode;
+    theme?: boolean
 }
 
-const MainLayout: React.FC<Props> = ({ children }) => {
-    const [isDarkMode] = useLocalStorage('darkMode')
+const MainLayout: React.FC<Props> = ({ children, theme }) => {
+
     const { toggleDarkMode } = useStore()
 
-
-
     useEffect(() => {
-        document.body.classList.toggle('dark-theme', isDarkMode)
-        toggleDarkMode(isDarkMode)
-    }, [isDarkMode])
+        if (theme) {
+            toggleDarkMode(theme)
+        }
+
+    }, [theme])
+
+
 
     return (
         <div id="page-content">

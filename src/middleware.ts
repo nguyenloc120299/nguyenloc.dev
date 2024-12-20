@@ -9,6 +9,7 @@ export async function middleware(request: NextRequest) {
   });
 
   const i18nResponse = handleI18nRouting(request);
+
   return i18nResponse || NextResponse.next();
 }
 

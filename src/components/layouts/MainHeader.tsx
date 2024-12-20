@@ -19,7 +19,8 @@ const MainHeader = () => {
 
   const handleToggleDarkMode = (val: boolean) => {
     toggleDarkMode(val);
-    setValueStorage(val);
+    // setValueStorage(val);
+    document.cookie = `theme=${val};path=/;`;
     document.body.classList.toggle("dark-theme", val);
   };
 
@@ -129,8 +130,8 @@ const MainHeader = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link className={clsx("nav-link",{
-                    'active':pathname==='/work'
+                  <Link className={clsx("nav-link", {
+                    'active': pathname === '/work'
                   })} href="/work">
                     <svg
                       className="nav-icon"
@@ -161,8 +162,8 @@ const MainHeader = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className={clsx("nav-link",{
-                    "active":pathname==='/blog'
+                  <Link className={clsx("nav-link", {
+                    "active": pathname === '/blog'
                   })} href="/blog">
                     <svg
                       className="nav-icon"
@@ -187,8 +188,8 @@ const MainHeader = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className={clsx("nav-link",{
-                    "active":pathname==='/contact'
+                  <Link className={clsx("nav-link", {
+                    "active": pathname === '/contact'
                   })} href="/contact">
                     <svg
                       className="nav-icon"
